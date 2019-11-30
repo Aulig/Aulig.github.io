@@ -9,7 +9,7 @@ function onUserProximityChanged(event) {
 	if (event.near) {
 		
 		window.scrollBy({
-		  bottom: 900,
+		  top: 900,
 		  behavior: 'smooth'
 		});
 	}
@@ -24,12 +24,11 @@ function updateLight(event) {
 
 window.onscroll = function(ev) {
 	
-    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
-		
-        var rainbowBox = document.getElementById('rainbowBox');
-		rainbowBox.innerHTML = variableLongText;
-		rainbowBox.scrollTop = 0;
+	if($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+		document.getElementById('prebox').scrollIntoView();
     }
+	
 };
 
 window.addEventListener('deviceproximity', onDeviceProximityChanged);
