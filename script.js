@@ -7,7 +7,7 @@ function onDeviceProximityChanged(event) {
 function onUserProximityChanged(event) {
 
 	if (event.near) {
-
+      		
 		var x = 0;
 		var inc = 1;
 		var max = 2000;
@@ -26,7 +26,18 @@ function onUserProximityChanged(event) {
 			}
 			else {
 				
-				inc = inc * 1.07;
+				inc = inc * 1.08;
+			}
+			
+			if (x >= max) {
+				
+				clearInterval(id);
+				return;
+			}
+			
+			if (inc < 1) {
+				
+				clearInterval(id);
 			}
 			
 			if (prevY == window.scrollY) {
@@ -39,11 +50,7 @@ function onUserProximityChanged(event) {
 				
 				prevY = window.scrollY;
 			}
-			
-			if (x >= max) {
-				
-				clearInterval(id);
-			}
+		
 		}, y);
 	}
 
@@ -62,6 +69,7 @@ document.getElementById("testbutton").addEventListener ('click',
 		var inc = 1;
 		var max = 2000;
 		var y = 1; //delay in milliseconds
+		var prevY = window.scrollY;
 
 		var id = setInterval(function() {
 			
@@ -75,19 +83,32 @@ document.getElementById("testbutton").addEventListener ('click',
 			}
 			else {
 				
-				inc = inc * 1.07;
+				inc = inc * 1.08;
 			}
 			
 			if (x >= max) {
 				
 				clearInterval(id);
+				return;
 			}
-		}, y);
+			
+			if (inc < 1) {
+				
+				clearInterval(id);
+			}
+			
+			if (prevY == window.scrollY) {
+				
+				document.getElementById('prebox').scrollIntoView();
+				clearInterval(id);
+				return;        
+			}
+			else {
+				
+				prevY = window.scrollY;
+			}
 		
-		if($(window).scrollTop() + $(window).height() == $(document).height()) {
-
-			document.getElementById('prebox').scrollIntoView();
-		}
+		}, y);
     }, 
     true);
 
