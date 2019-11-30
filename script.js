@@ -8,7 +8,10 @@ function onUserProximityChanged(event) {
 
 	if (event.near) {
 		
-		window.scrollBy(0, 500);
+		window.scrollBy({
+		  bottom: 900,
+		  behavior: 'smooth'
+		});
 	}
 
 	document.getElementById('nearValue').innerHTML = event.near ? 'near' : 'far away';
@@ -19,7 +22,15 @@ function updateLight(event) {
 	document.getElementById("lightValue").innerHTML = event.value + " lux";
 }
 
-
+window.onscroll = function(ev) {
+	
+    if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight) {
+		
+        var rainbowBox = document.getElementById('rainbowBox');
+		rainbowBox.innerHTML = variableLongText;
+		rainbowBox.scrollTop = 0;
+    }
+};
 
 window.addEventListener('deviceproximity', onDeviceProximityChanged);
 window.addEventListener('userproximity', onUserProximityChanged);
