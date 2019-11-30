@@ -28,16 +28,18 @@ function onUserProximityChanged(event) {
 				inc = inc * 1.07;
 			}
 			
+			if($(window).scrollTop() + $(window).height() == $(document).height()) {
+
+				document.getElementById('prebox').scrollIntoView();
+				clearInterval(id);
+				return;
+			}
+			
 			if (x >= max) {
 				
 				clearInterval(id);
 			}
 		}, y);
-		
-		if($(window).scrollTop() + $(window).height() == $(document).height()) {
-
-			document.getElementById('prebox').scrollIntoView();
-		}
 	}
 
 	document.getElementById('nearValue').innerHTML = event.near ? 'near' : 'far away';
