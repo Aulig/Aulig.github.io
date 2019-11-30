@@ -42,9 +42,7 @@ function onUserProximityChanged(event) {
 			
 			if (prevY == window.scrollY) {
 				
-				document.getElementById('prebox').scrollIntoView();
-				clearInterval(id);
-				return;        
+				document.getElementById('prebox').scrollIntoView(); 
 			}
 			else {
 				
@@ -100,8 +98,8 @@ document.getElementById("testbutton").addEventListener ('click',
 			if (prevY == window.scrollY) {
 				
 				document.getElementById('prebox').scrollIntoView();
-				clearInterval(id);
-				return;        
+				inc = inc * 1.08; //small speed boost to scroll past short "lag" & color inconsistency when jumping to top
+
 			}
 			else {
 				
