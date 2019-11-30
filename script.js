@@ -6,9 +6,9 @@ function onDeviceProximityChanged(event) {
 
 function onUserProximityChanged(event) {
 
-	if (event.near == 'near') {
+	if (event.near) {
 		
-		window.scrollBy(0, 1000);
+		window.scrollBy(0, 500);
 	}
 
 	document.getElementById('nearValue').innerHTML = event.near ? 'near' : 'far away';
