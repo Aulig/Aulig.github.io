@@ -19,15 +19,12 @@
 	</head>
 	<body id="body">
 
-		<p>Please make sure to set device.sensors.ambientLight.enabled=true and device.sensors.proximity.enabled=true in about:config (Firefox) for this demo.</p>
-		<a href="https://blog.lukaszolejnik.com/stealing-sensitive-browser-data-with-the-w3c-ambient-light-sensor-api/">Maybe disable it again afterwards.</a>
+		<p>Please use Firefox for this demo and set device.sensors.proximity.enabled=true in about:config.</p>
+		<a href="https://blog.lukaszolejnik.com/stealing-sensitive-browser-data-with-the-w3c-ambient-light-sensor-api/">You might want to disable it again afterwards.</a>
 
-		<p>Current approximate distance to object is <b id="distanceValue">unknown</b>.</p>
-		<p>Currently, the object is <b id="nearValue">in unknown proximity</b>.</p>
+		<p>Approximate distance to the closest object is <b id="distanceValue">unknown</b>.</p>
+		<p>Currently, the closest object to the sensor is <b id="nearValue">in unknown proximity</b>.</p>
 
-		<p>Current light intensity is <b id="lightValue">unknown</b>.</p>
-
-		<button id="testbutton"> Test proximity</button>
 		<div id="prebox"> </div>
 		<div id="rainbowbox"> </div>
 
