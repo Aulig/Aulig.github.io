@@ -8,7 +8,7 @@ function onUserProximityChanged(event) {
 
 	if (event.near == 'near') {
 		
-		window.scrollBy(0, 100);
+		window.scrollBy(0, 1000);
 	}
 
 	document.getElementById('nearValue').innerHTML = event.near ? 'near' : 'far away';
