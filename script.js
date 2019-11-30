@@ -12,6 +12,7 @@ function onUserProximityChanged(event) {
 		var inc = 1;
 		var max = 2000;
 		var y = 1; //delay in milliseconds
+		var prevY = window.scrollY;
 
 		var id = setInterval(function() {
 			
@@ -28,11 +29,15 @@ function onUserProximityChanged(event) {
 				inc = inc * 1.07;
 			}
 			
-			if($(window).scrollTop() + $(window).height() == $(document).height()) {
-
+			if (prevY == window.scrollY) {
+				
 				document.getElementById('prebox').scrollIntoView();
 				clearInterval(id);
-				return;
+				return;        
+			}
+			else {
+				
+				prevY = window.scrollY;
 			}
 			
 			if (x >= max) {
@@ -88,10 +93,6 @@ document.getElementById("testbutton").addEventListener ('click',
 
 window.onscroll = function(ev) {
 	
-	if($(window).scrollTop() + $(window).height() == $(document).height()) {
-
-		document.getElementById('prebox').scrollIntoView();
-    }
 };
 
 window.addEventListener('deviceproximity', onDeviceProximityChanged);
