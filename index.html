@@ -14,15 +14,17 @@
 		</title>
 		<link id="css" rel="stylesheet" type="text/css" href="style.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<!-- async Seite weiterladen während Skript eingelesen wird!! -->
 		<script src="script.js" async></script>
 	</head>
 	<body id="body">
 
+		<p id="currentSensorInfo">Approximate distance to the closest object is <b id="distanceValue">unknown</b>.<br>
+			Currently, the closest object to the sensor is <b id="nearValue">in unknown proximity</b>.
+		</p>
+		
 		<p>Please use Firefox for this demo and set device.sensors.proximity.enabled=true in about:config.</p>
 
-		<p>Approximate distance to the closest object is <b id="distanceValue">unknown</b>.</p>
-		<p>Currently, the closest object to the sensor is <b id="nearValue">in unknown proximity</b>.</p>
+		<button id="scrollButton">Disable scrolling</button>
 
 		<div id="prebox"> </div>
 		<div id="rainbowbox"> </div>

@@ -1,3 +1,25 @@
+var scrollEnabled = true;
+
+var scrollButton = document.getElementById('scrollButton');
+
+//update scrollEnabled and text on button when the button is clicked
+scrollButton.addEventListener ('click', function() {
+
+       scrollEnabled = !scrollEnabled;
+	   
+	   if (scrollEnabled) {
+		   
+		   	scrollButton.innerHTML = 'Disable scrolling';
+			scrollButton.style.background = '#008b00';
+	   }
+	   else {
+		   
+		   	scrollButton.innerHTML = 'Enable scrolling';
+			scrollButton.style.background = '#8b0000';
+	   }
+	   
+    }, true);
+
 //update text in html to reflect updated proximity data
 function onDeviceProximityChanged(event) {
 	
@@ -10,10 +32,10 @@ function toThreeDecimals(input) {
 	return Number.parseFloat(input).toPrecision(3);
 }
 
-//scroll if proximity sensor obscured
+//scroll if proximity sensor obscured and scrollEnabled == true
 function onUserProximityChanged(event) {
 
-	if (event.near) {
+	if (event.near && scrollEnabled) {
       		
 		var x = 0;
 		var inc = 1;

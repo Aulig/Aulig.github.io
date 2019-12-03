@@ -7,7 +7,24 @@
 }
 
 #body {
-	
+	font-family: Arial, Verdana, sans-serif; 
+	text-align: center;
 	margin: 0;
 	padding: 0;
+}
+
+#scrollButton {
+	
+	background-color: #008b00;
+	color: white;
+	border: none;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	padding: 0.2rem;
+	border-radius: 4px;
+}
+
+#currentSensorInfo {
+	
+	font-size: 1.2rem;
 }
