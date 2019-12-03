@@ -1,7 +1,7 @@
 //update text in html to reflect updated proximity data
 function onDeviceProximityChanged(event) {
 	
-	document.getElementById('distanceValue').innerHTML = toThreeDecimals(event.value) + 'range: cm (' + toThreeDecimals(event.min) + '-' + toThreeDecimals(event.max) + ' cm)';
+	document.getElementById('distanceValue').innerHTML = toThreeDecimals(event.value) + ' cm (range: ' + toThreeDecimals(event.min) + '-' + toThreeDecimals(event.max) + ' cm)';
 }
 
 //parse number to 3 post comma decimals
