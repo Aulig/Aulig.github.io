@@ -25,6 +25,8 @@ scrollButton.addEventListener ('click', function() {
     }, true);
 
 function switchContent(newContentName) {
+
+	mode = newContentName;
 	
 	document.getElementById("rainbowbox").style.display = "none";
 	document.getElementById("recipebox").style.display = "none";
