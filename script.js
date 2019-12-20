@@ -1,3 +1,5 @@
+var mode = "rainbow";
+
 var scrollEnabled = true;
 
 var scrollButton = document.getElementById('scrollButton');
@@ -19,6 +21,26 @@ scrollButton.addEventListener ('click', function() {
 	   }
 	   
     }, true);
+
+function switchContent(newContentName) {
+	
+	document.getElementById("rainbowbox").style.visibility = "hidden";
+	document.getElementById("recipebox").style.visibility = "hidden";
+
+	
+	switch (newContentName) {
+		
+		case "rainbow":
+			document.getElementById("rainbowbox").style.visibility = "visible";
+
+			break;
+			
+		case "recipe":
+		
+			document.getElementById("recipebox").style.visibility = "visible";
+			break;
+	}
+}
 
 //update text in html to reflect updated proximity data
 function onDeviceProximityChanged(event) {
@@ -69,8 +91,9 @@ function onUserProximityChanged(event) {
 				clearInterval(id);
 			}
 			
-			if (prevY == window.scrollY) {
+			if (prevY == window.scrollY && mode == "rainbow") {
 				
+				//scroll back to top, only in rainbow mode
 				document.getElementById('prebox').scrollIntoView(); 
 			}
 			else {
