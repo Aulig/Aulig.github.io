@@ -26,20 +26,20 @@ scrollButton.addEventListener ('click', function() {
 
 function switchContent(newContentName) {
 	
-	document.getElementById("rainbowbox").style.visibility = "hidden";
-	document.getElementById("recipebox").style.visibility = "hidden";
+	document.getElementById("rainbowbox").style.display = "none";
+	document.getElementById("recipebox").style.display = "none";
 
 	
 	switch (newContentName) {
 		
 		case "rainbow":
-			document.getElementById("rainbowbox").style.visibility = "visible";
+			document.getElementById("rainbowbox").style.display = "block";
 
 			break;
 			
 		case "recipe":
 		
-			document.getElementById("recipebox").style.visibility = "visible";
+			document.getElementById("recipebox").style.display = "block";
 			break;
 	}
 }
