@@ -63,7 +63,7 @@ function onUserProximityChanged(event) {
       		
 		var x = 0;
 		var inc = 1;
-		var max = screenHeight; //max amount to scroll
+		var max = screenHeight * 0.8; //max amount to scroll
 		var y = 1; //delay in milliseconds
 		var prevY = window.scrollY;
 
@@ -75,7 +75,7 @@ function onUserProximityChanged(event) {
 			
 			if (x > (max / 2) + 1) {
 
-				inc = inc / 1.07;
+				inc = inc / 1.08;
 			}
 			else {
 				
