@@ -63,7 +63,7 @@ function onUserProximityChanged(event) {
       		
 		var x = 0;
 		var inc = 1;
-		var max = screenHeight * 0.8; //max amount to scroll
+		var max = screenHeight; //max amount to scroll
 		var y = 1; //delay in milliseconds
 		var prevY = window.scrollY;
 
@@ -73,15 +73,26 @@ function onUserProximityChanged(event) {
 			
 			x = x + inc;
 			
-			inc = inc * 1.08;
-			
+			if (x > (max / 2) + 1) {
+
+				inc = inc / 1.07;
+			}
+			else {
+				
+				inc = inc * 1.08;
+			}
 			
 			if (x >= max) {
 				
 				clearInterval(id);
 				return;
 			}
-						
+			
+			if (inc < 1) {
+				
+				clearInterval(id);
+			}
+			
 			if (prevY == window.scrollY && mode == "rainbow") {
 				
 				//scroll back to top, only in rainbow mode
