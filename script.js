@@ -1,5 +1,7 @@
 var mode = "rainbow";
 
+var screenHeight = screen.height
+
 var scrollEnabled = true;
 
 var scrollButton = document.getElementById('scrollButton');
@@ -61,7 +63,7 @@ function onUserProximityChanged(event) {
       		
 		var x = 0;
 		var inc = 1;
-		var max = 2000;
+		var max = screenHeight * 0.8; //max amount to scroll
 		var y = 1; //delay in milliseconds
 		var prevY = window.scrollY;
 
