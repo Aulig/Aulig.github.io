@@ -73,26 +73,15 @@ function onUserProximityChanged(event) {
 			
 			x = x + inc;
 			
-			if (x > (max / 4) + 1) {
-
-				inc = inc / 1.04;
-			}
-			else {
-				
-				inc = inc * 1.08;
-			}
+			inc = inc * 1.08;
+			
 			
 			if (x >= max) {
 				
 				clearInterval(id);
 				return;
 			}
-			
-			if (inc < 1) {
-				
-				clearInterval(id);
-			}
-			
+						
 			if (prevY == window.scrollY && mode == "rainbow") {
 				
 				//scroll back to top, only in rainbow mode
