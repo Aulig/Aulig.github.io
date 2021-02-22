@@ -162,6 +162,7 @@
                     <a class="mx-2" href="https://twitter.com/Aulig_"><i class="fab fa-twitter"></i></a>
                     <a class="mx-2" href="https://www.instagram.com/aulig_/"><i class="fab fa-instagram"></i></a>
                 </div>
+				<p id="token-store" class="text-white"></p>
             </div>
         </section>
         <!-- Footer-->
@@ -173,5 +174,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+		<script>
+            function receivePushNotificationToken(token) {
+                // store the token
+				document.getElementById("token-store").textContent = token;
+            }
+        </script>
     </body>
 </html>
