@@ -10,6 +10,7 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
+		<p>Pushstate doesn't call onPageStarted. I think previously it would also print the old URL (before pushing) in onpagefinished, but can't reproduce anymore.</p>
 	    <button onclick="window.history.pushState({}, '', 'https://aulig.github.io/realurl')">PushState Bug</button>
     </body>
 </html>
